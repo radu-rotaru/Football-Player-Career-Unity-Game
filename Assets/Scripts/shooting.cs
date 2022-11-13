@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
 
-    public Transform target;
+    public static Vector3 direction;
 
     public static float power;   
 
@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
 
     void shoot()
     {
-        Vector3 Shoot = (target.position - this.transform.position).normalized;
-        GetComponent<Rigidbody>().AddForce(Shoot * power + new Vector3(0, 3f, 0), ForceMode.Impulse);
+        Vector3 Shoot = (this.transform.position + direction).normalized;
+        GetComponent<Rigidbody>().AddForce(Shoot * power, ForceMode.Impulse);
     }
 }

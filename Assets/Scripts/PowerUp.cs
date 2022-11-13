@@ -11,9 +11,10 @@ public class PowerUp : MonoBehaviour
     private bool isPowerUp = false;
     private bool isPowerIncreasing = true;
     public static float powerAmount = 0.0f;
-    private float powerSpeed = 100.0f;
+    private float powerSpeed = 25.0f;
+    private float maxPower = 30.0f;
+    private float minPower = 5.0f;
 
-    // Update is called once per frame
     void Update()
     {
         if (isPowerUp)
@@ -25,7 +26,7 @@ public class PowerUp : MonoBehaviour
     public void StartPowerUp()
     {
         isPowerUp = true;
-        powerAmount = 0.0f;
+        powerAmount = minPower;
         isPowerIncreasing = true;
     }
 
@@ -40,22 +41,22 @@ public class PowerUp : MonoBehaviour
         if(isPowerIncreasing)
         {
             powerAmount += Time.deltaTime * powerSpeed;
-            if(powerAmount > 100.0f)
+            if(powerAmount > maxPower)
             {
                 isPowerIncreasing = false;
-                powerAmount = 100.0f;
+                powerAmount = maxPower;
             }
         }
         else
         {
             powerAmount -= Time.deltaTime * powerSpeed;
-            if (powerAmount < 0.0f)
+            if (powerAmount < minPower)
             {
                 isPowerIncreasing = true;
-                powerAmount = 0.0f;
+                powerAmount = minPower;
             }
         }
 
-        imagePoewrUp.fillAmount = (0.5f - 0.25f) * powerAmount / 100.0f + 0.25f;
+        imagePoewrUp.fillAmount = (0.5f - 0.25f) * (powerAmount - minPower) / (maxPower - minPower) + 0.25f;
     }
 }

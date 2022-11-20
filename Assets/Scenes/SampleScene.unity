@@ -694,6 +694,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613630140}
   m_CullTransparentMesh: 1
+--- !u!1 &630622646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fdb7563f754b49439f0f88d097e7cfc, type: 3}
+  m_PrefabInstance: {fileID: 1533466940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &630622647
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630622646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1.9
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &630622648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630622646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b93fe9900860ac41b002fb951766da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalkeeper: {fileID: 630622646}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,8 +1536,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8fdb7563f754b49439f0f88d097e7cfc, type: 3}
       propertyPath: m_Name
-      value: character
+      value: Goalkeeper
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8fdb7563f754b49439f0f88d097e7cfc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cc6a3cffc99b38849b61b7e86c6f47c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fdb7563f754b49439f0f88d097e7cfc, type: 3}
 --- !u!1 &1772797856

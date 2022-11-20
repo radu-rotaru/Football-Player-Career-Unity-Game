@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SoccerBall
+  - DumWall
+  - GoalText
+  - Wall
+  - MissWall
+  - MissText
   layers:
   - Default
   - TransparentFX

@@ -16,11 +16,11 @@ public class GoalkeeperDive : MonoBehaviour
 
             if (!dive_dir)
             {
-                goalkeeper.GetComponent<Animator>().Play("GoalkeeperDivingLeft");
+                goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveLeft");
             }
             else
             {
-                goalkeeper.GetComponent<Animator>().Play("GoalkeeperDivingRight");
+                goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveRight");
             }
             
             Shooting.isShooting = false;

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - GoalText
   - WallGoal
+  - MIssWall
+  - Misstext
+  - MissWall
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GoalkeeperDive : MonoBehaviour
+public class GoalkeeperDivePenalty : MonoBehaviour
 {
     public GameObject goalkeeper;
 
@@ -22,10 +22,9 @@ public class GoalkeeperDive : MonoBehaviour
             {
                 goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveRight");
             }
-            
+
             Shooting.isShooting = false;
+            
         }
     }
-
-
 }

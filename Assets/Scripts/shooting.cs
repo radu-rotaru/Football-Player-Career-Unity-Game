@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
 
     void shoot()
     {
-        Vector3 Shoot = (this.transform.position + direction).normalized;
-        GetComponent<Rigidbody>().AddForce(Shoot * power, ForceMode.Impulse);
+        direction.y = 0.3f;
+        GetComponent<Rigidbody>().AddForce(direction * power, ForceMode.Impulse);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Direction : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class Direction : MonoBehaviour
     private Button directionBarButton;
     [SerializeField]
     private Image directionBarImage;
+    [SerializeField]
+    private float leftRangeAngle;
+    [SerializeField]
+    private float rightRangeAngle;
 
     private float barSpeed = 100.0f;
     private bool isMovingRight;
@@ -18,8 +23,6 @@ public class Direction : MonoBehaviour
     private float minPosX;
     private Vector3 maxDirection;
     private Vector3 minDirection;
-    private float leftRangeAngle = -75.0f;
-    private float rightRangeAngle = 75.0f;
 
     void Start()
     {

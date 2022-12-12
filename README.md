@@ -3,6 +3,7 @@ Team leader: Rotaru Radu-Stefan
 Senior coder: Guleama Dan Alexandru
 Ceilalti membri: Visalon Giani, Tabacaru Andrei, Butelca Radu Andrei, Capmare Alex Mihai
 
+How to play: Momentan avem implementata o tehnica rudimentara, flow-ul unui sut este: selectarea directiei, selectarea puterii si apasarea tastei `space`.
 Obiective Sprint #3:
 
 1 - Crearea unei scene pentru un sut din actiune – done:

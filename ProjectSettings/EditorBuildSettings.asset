@@ -12,9 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Penalty.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/TrainingScene.unity
+    guid: c85f88877a7c0d9429458df85941aec5
+  - enabled: 1
     path: Assets/Scenes/PlayScene.unity
     guid: bd0e3790c90c2ec4eafe5c9331f8b4e4
   - enabled: 1
     path: Assets/Scenes/Training.unity
     guid: 61bf0867352f84e1b8aa478f44d565b1
+  - enabled: 1
+    path: Assets/Scenes/MatchMessage.unity
+    guid: 8633f11373669d24f9c371ab02d2b96a
+  - enabled: 1
+    path: Assets/Scenes/ShootingFromAction.unity
+    guid: 0f44bba2ef7074c46a61eaf3454d441e
   m_configObjects: {}

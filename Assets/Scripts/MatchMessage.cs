@@ -14,7 +14,7 @@ public class MatchMessage : MonoBehaviour
     public static int goalsOpponentTeam = 0;
     public static int sceneIteration = 0;
     public static int playerScenes = 2;
-    public static int computerScenes = 5 - playerScenes;
+    public static int computerScenes = 3;
 
     private bool started = false;
     private int isPlayerSceneNext = 0;

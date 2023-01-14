@@ -5,25 +5,17 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    public int CurrentScore;
+    public int score;
 
-    public int HighScore;
     // Start is called before the first frame update
     public void OnGUI()
     {
-        GUI.Box(new Rect(10, 10, 150, 90), "");
+        GUI.skin.label.fontSize = 50;
+
+        GUI.Box(new Rect(10, 10, 250, 190), "");
 
         // Add the score text
-        GUI.Label(new Rect(20, 20, 110, 20), "Current Score:"  + CurrentScore);
-
-        // Add the high score text
-        GUI.Label(new Rect(20, 40, 110, 20), "High Score: " + HighScore);
-
-        // When the reset button is clicked reset the score
-        if (GUI.Button(new Rect(20, 70, 130, 20), "Reset")) {
-            CurrentScore = 0;
-            HighScore = 0;
-        }
+        GUI.Label(new Rect(20, 20, 210, 120), "Score:"  + score);
     }
 
     void Start()

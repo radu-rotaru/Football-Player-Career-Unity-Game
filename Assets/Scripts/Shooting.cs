@@ -8,14 +8,16 @@ public class Shooting : MonoBehaviour
     public static Vector3 direction;
     public static float power;
     public static bool isShooting = false;
+    public static bool hasShot = false;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (isShooting && !hasShot)
         {
-            isShooting = true;
+            hasShot = true;
+            isShooting = false;
             shoot();
-        }         
+        }
     }
 
 

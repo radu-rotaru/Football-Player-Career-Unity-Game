@@ -9,7 +9,7 @@ public class GoalkeeperDivePenalty : MonoBehaviour
 
     void Update()
     {
-        if (Shooting.isShooting)
+        if (Shooting.hasShot)
         {
             var rnd = new System.Random(DateTime.Now.Millisecond);
             bool dive_dir = rnd.Next(2) == 1;
@@ -23,7 +23,7 @@ public class GoalkeeperDivePenalty : MonoBehaviour
                 goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveRight");
             }
 
-            Shooting.isShooting = false;
+            Shooting.hasShot = false;
             
         }
     }

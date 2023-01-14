@@ -10,7 +10,7 @@ public class GoalkeeperDiveFromAction : MonoBehaviour
 
     void Update()
     {
-        if (Shooting.isShooting)
+        if (Shooting.hasShot)
         {
             Vector2 keeperDirection = new Vector2(goalkeeper.transform.position.x - ball.transform.position.x, goalkeeper.transform.position.z - ball.transform.position.z);
             Vector2 shootingDirection = new Vector2(Shooting.direction.x, Shooting.direction.z);
@@ -19,10 +19,17 @@ public class GoalkeeperDiveFromAction : MonoBehaviour
 
             if (Vector2.Angle(shootingDirection, keeperDirection) > 5.0f)
             {
-                goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveRight");
+                if(ball.transform.position.z  <= goalkeeper.transform.position.z)
+                {
+                    goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveRight");
+                }
+                else
+                {
+                    goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveLeft");
+                }
             }
 
-            Shooting.isShooting = false;
+            Shooting.hasShot = false;
         }
     }
 

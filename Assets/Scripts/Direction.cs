@@ -15,9 +15,11 @@ public class Direction : MonoBehaviour
     [SerializeField]
     private float rightRangeAngle;
 
+    public static bool chosen = false;
+    public bool done = false;
+
     private float barSpeed = 100.0f;
     private bool isMovingRight;
-    private bool isNotClickedYet;
     private float halfOfBarWidth;
     private float maxPosX;
     private float minPosX;
@@ -26,8 +28,8 @@ public class Direction : MonoBehaviour
 
     void Start()
     {
+        chosen = false;
         isMovingRight = true;
-        isNotClickedYet = true;
         halfOfBarWidth = directionBarButton.GetComponent<RectTransform>().sizeDelta.x / 2;
         minPosX = directionBarButton.GetComponent<RectTransform>().anchoredPosition.x - halfOfBarWidth;
         maxPosX = directionBarButton.GetComponent<RectTransform>().anchoredPosition.x + halfOfBarWidth;
@@ -37,15 +39,23 @@ public class Direction : MonoBehaviour
 
     void Update()
     {
-        if (isNotClickedYet)
+        if (!chosen)
         {
             DirectionBarMovement();
+        }
+        else
+        {
+            if(!done && PowerUp.chosen)
+            {
+                done = true;
+                Shooting.isShooting = true;
+            }
         }
     }
 
     public void EndDirectionBar()
     {
-        isNotClickedYet = false;
+        chosen = true;
         float posX = directionBarImage.GetComponent<RectTransform>().anchoredPosition.x;
 
         float directionAngle = (rightRangeAngle - leftRangeAngle) * (posX - minPosX) / (maxPosX - minPosX) + leftRangeAngle;

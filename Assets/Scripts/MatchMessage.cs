@@ -51,7 +51,8 @@ public class MatchMessage : MonoBehaviour
 
 
     private (string, string)[] playerSceneMessages = new[] {
-        ("You are through on goal on the righ side!", "ShootingFromAction"),
+        ("You are through on goal on the right side!", "ShootingFromActionRight"),
+        ("You are through on goal on the left side!", "ShootingFromActionLeft"),
         ("Your team has received a penalty and you are going to execute it!", "Penalty")
     };
 

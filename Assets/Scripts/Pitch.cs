@@ -15,6 +15,7 @@ public class Pitch : MonoBehaviour
 
     void Start()
     {
+        finished = false;
         menu = GameObject.Find("Menu");
     }
 
@@ -23,6 +24,7 @@ public class Pitch : MonoBehaviour
         if(menu.GetComponent<Menu>().score > 0)
         {
             MatchMessage.playerScenes = 1 + Convert.ToInt32(Math.Floor(Math.Min(maxScore, menu.GetComponent<Menu>().score) / levelStep));
+            MatchMessage.playerTeamScenes = 5 - MatchMessage.playerScenes;
             trainingMessage.GetComponent<TextMeshProUGUI>().text = $"Final score: {menu.GetComponent<Menu>().score}";
             finished = true;
         }

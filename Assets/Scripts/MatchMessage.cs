@@ -12,7 +12,7 @@ public class MatchMessage : MonoBehaviour
     public GameObject matchMessage;
     public static int goalsPlayerTeam = 0;
     public static int goalsOpponentTeam = 0;
-    public static int playerScenes = 2;
+    public static int playerScenes = 1;
     public static int playerTeamScenes = 5 - playerScenes;
     public static int computerScenes = 5;
 
@@ -22,6 +22,8 @@ public class MatchMessage : MonoBehaviour
     private float delayBeforeLoading = 5.0f;
     private float waitBeforeTakingActiion = 3.0f;
     private string sceneToLoad;
+
+    private string endScene = "PlayScene";
 
     private string[] goalMessages = {
     "The team has just put the ball in the back of the net with a well-placed shot, a great finish that showcases their attacking prowess. The player cut through the defense and placed it perfectly in the corner.",
@@ -78,6 +80,12 @@ public class MatchMessage : MonoBehaviour
             if (playerScenes + playerTeamScenes + computerScenes == 0)
             {
                 matchMessage.GetComponent<TextMeshProUGUI>().text = $"The referee blows the whistle! The result is {goalsPlayerTeam} - {goalsOpponentTeam}";
+                Click.done = false;
+                goalsPlayerTeam = 0;
+                goalsOpponentTeam = 0;
+                computerScenes = 5;
+
+                sceneToLoad = endScene;
             }
             else
             {

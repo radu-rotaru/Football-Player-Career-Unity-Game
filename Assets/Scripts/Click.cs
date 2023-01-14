@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Click : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class Click : MonoBehaviour
     private bool clicked;
     private GameObject menu;
     private Rigidbody _rigidbody;
+    private string sceneToLoad = "PlayScene";
+    private float timeElapsed = 0.0f;
+    private float delayBeforeLoading = 3.0f;
+
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -19,9 +26,9 @@ public class Click : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (clicked)
+        if (clicked && !Pitch.finished) 
         {
-            int x =Random.Range(0,2);
+            int x = Random.Range(0,2);
             int y = Random.Range(1, 40);
             if(x==0)
             {
@@ -33,12 +40,20 @@ public class Click : MonoBehaviour
                 _rigidbody.AddForce(Vector3.up * (kickPower * 100));
                 _rigidbody.AddForce(Vector3.right * (kickPower * y) );
             }
-            menu.GetComponent<Menu>().CurrentScore += 1;
-            if (menu.GetComponent<Menu>().CurrentScore > menu.GetComponent<Menu>().HighScore) {
-                menu.GetComponent<Menu>().HighScore = menu.GetComponent<Menu>().CurrentScore;
-            }
-
+            
+            menu.GetComponent<Menu>().score += 1;
+            
             clicked = false;
+        }
+
+        if(Pitch.finished)
+        {
+            timeElapsed += Time.deltaTime;
+
+            if(timeElapsed > delayBeforeLoading)
+            {
+                SceneManager.LoadScene(sceneToLoad);
+            }
         }
         
     }

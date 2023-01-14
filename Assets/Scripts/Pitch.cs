@@ -2,19 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Pitch : MonoBehaviour
 {
     private GameObject menu;
-    // Start is called before the first frame update
+    public GameObject trainingMessage;
+    // the score that gives the max reward, every score higher gives the same result
+    private float maxScore = 60.0f;
+    public static bool finished = false;
+    private int levelStep = 30;
+
     void Start()
     {
         menu = GameObject.Find("Menu");
     }
 
-    // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        menu.GetComponent<Menu>().CurrentScore = 0;
+        if(menu.GetComponent<Menu>().score > 0)
+        {
+            MatchMessage.playerScenes = 1 + Convert.ToInt32(Math.Floor(Math.Min(maxScore, menu.GetComponent<Menu>().score) / levelStep));
+            trainingMessage.GetComponent<TextMeshProUGUI>().text = $"Final score: {menu.GetComponent<Menu>().score}";
+            finished = true;
+        }
     }
 }

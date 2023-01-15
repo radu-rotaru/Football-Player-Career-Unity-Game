@@ -16,6 +16,7 @@ public class Click : MonoBehaviour
     private string sceneToLoad = "PlayScene";
     private float timeElapsed = 0.0f;
     private float delayBeforeLoading = 3.0f;
+    public static bool done = false; 
 
 
     void Start()
@@ -52,6 +53,7 @@ public class Click : MonoBehaviour
 
             if(timeElapsed > delayBeforeLoading)
             {
+                done = true;
                 SceneManager.LoadScene(sceneToLoad);
             }
         }

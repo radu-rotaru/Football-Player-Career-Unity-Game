@@ -7,10 +7,11 @@ public class GoalkeeperDiveFromAction : MonoBehaviour
 {
     public GameObject goalkeeper;
     public GameObject ball;
+    private bool done = false;
 
     void Update()
     {
-        if (Shooting.hasShot)
+        if (!done && Shooting.hasShot)
         {
             Vector2 keeperDirection = new Vector2(goalkeeper.transform.position.x - ball.transform.position.x, goalkeeper.transform.position.z - ball.transform.position.z);
             Vector2 shootingDirection = new Vector2(Shooting.direction.x, Shooting.direction.z);
@@ -29,7 +30,7 @@ public class GoalkeeperDiveFromAction : MonoBehaviour
                 }
             }
 
-            Shooting.hasShot = false;
+            done = true;
         }
     }
 

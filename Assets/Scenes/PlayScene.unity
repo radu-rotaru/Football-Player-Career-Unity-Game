@@ -269,6 +269,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -280,7 +284,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -388,6 +392,10 @@ PrefabInstance:
     - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Name
       value: GermanyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: Germany
       objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
@@ -579,11 +587,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75446943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad80b49168d3d640b8843f994d262e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  argImg: {fileID: 21300000, guid: 52bc12fe0fb18ae45b70efe8522a3874, type: 3}
+  brsImg: {fileID: 21300000, guid: 4defae96b0da744418171a56b0672278, type: 3}
+  netImg: {fileID: 21300000, guid: c618dcb6ceecd8f4c986eb83fa5262e6, type: 3}
+  gerImg: {fileID: 21300000, guid: 422b52fc6249e8d429de010242acee97, type: 3}
+  crtImg: {fileID: 21300000, guid: 247fe508346bc7f42a8156ca3b57cf2e, type: 3}
+  frcImg: {fileID: 21300000, guid: 2872880a05542ba4cb393f7d170f9bbf, type: 3}
+  engImg: {fileID: 21300000, guid: 11ff4e45df325c04984f59633f12e789, type: 3}
+  spnImg: {fileID: 21300000, guid: 336fd195d315d8440bda8f6f3ae8c5e2, type: 3}
   playerTeam: -1
 --- !u!114 &75446947
 MonoBehaviour:
@@ -1039,6 +1055,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1050,7 +1070,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1158,6 +1178,10 @@ PrefabInstance:
     - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Name
       value: SpainButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: Spain
       objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
@@ -1422,6 +1446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637399835}
   - component: {fileID: 637399834}
+  - component: {fileID: 637399836}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -1458,6 +1483,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &637399836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637399833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad80b49168d3d640b8843f994d262e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  argImg: {fileID: 21300000, guid: 52bc12fe0fb18ae45b70efe8522a3874, type: 3}
+  brsImg: {fileID: 21300000, guid: 4defae96b0da744418171a56b0672278, type: 3}
+  netImg: {fileID: 21300000, guid: c618dcb6ceecd8f4c986eb83fa5262e6, type: 3}
+  gerImg: {fileID: 21300000, guid: 422b52fc6249e8d429de010242acee97, type: 3}
+  crtImg: {fileID: 21300000, guid: 247fe508346bc7f42a8156ca3b57cf2e, type: 3}
+  frcImg: {fileID: 21300000, guid: 2872880a05542ba4cb393f7d170f9bbf, type: 3}
+  engImg: {fileID: 21300000, guid: 11ff4e45df325c04984f59633f12e789, type: 3}
+  spnImg: {fileID: 21300000, guid: 336fd195d315d8440bda8f6f3ae8c5e2, type: 3}
+  playerTeam: -1
 --- !u!1 &664434521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1826,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1059597549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059597550}
+  - component: {fileID: 1059597552}
+  - component: {fileID: 1059597551}
+  m_Layer: 0
+  m_Name: Opponent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1059597550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059597549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1483313001}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 115, y: -130}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1059597551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059597549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1059597552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059597549}
+  m_CullTransparentMesh: 1
 --- !u!1 &1082934906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +2047,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1936,7 +2062,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2044,6 +2170,10 @@ PrefabInstance:
     - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Name
       value: BrazilButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: Brazil
       objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
@@ -2223,7 +2353,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1647794837}
+  - {fileID: 1059597550}
   m_Father: {fileID: 579507728}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2340,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2351,7 +2487,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2459,6 +2595,10 @@ PrefabInstance:
     - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Name
       value: NetherlandsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: Netherlands
       objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
@@ -2679,6 +2819,82 @@ MonoBehaviour:
   m_Spacing: {x: 100, y: 100}
   m_Constraint: 1
   m_ConstraintCount: 4
+--- !u!1 &1647794836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647794837}
+  - component: {fileID: 1647794839}
+  - component: {fileID: 1647794838}
+  m_Layer: 0
+  m_Name: MyTeam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1647794837
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647794836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1483313001}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -143, y: -131}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1647794838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647794836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1647794839
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647794836}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1745285231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2689,6 +2905,10 @@ PrefabInstance:
     - target: {fileID: 8178356950570628542, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
       objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2701,7 +2921,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2810,6 +3030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnglandButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: England
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
       value: 0
@@ -2841,6 +3065,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2852,7 +3080,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2961,6 +3189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FranceButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: France
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
       value: 0
@@ -2987,6 +3219,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2998,7 +3234,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3107,6 +3343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CroatiaButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: Croatia
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type
       value: 0
@@ -3209,6 +3449,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8178356950570628543, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -3224,7 +3468,7 @@ PrefabInstance:
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 75446946}
+      objectReference: {fileID: 637399836}
     - target: {fileID: 8178356951044096304, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3340,6 +3584,10 @@ PrefabInstance:
     - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Name
       value: ArgentinaButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178356951044096306, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
+      propertyPath: m_TagString
+      value: Argentina
       objectReference: {fileID: 0}
     - target: {fileID: 8178356951044096319, guid: d5afdca9fbce70a4e94220b7b73be7f5, type: 3}
       propertyPath: m_Type

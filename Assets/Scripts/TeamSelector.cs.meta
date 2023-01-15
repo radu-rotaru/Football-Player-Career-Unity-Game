@@ -3,7 +3,15 @@ guid: 1ad80b49168d3d640b8843f994d262e5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - argImg: {fileID: 21300000, guid: 52bc12fe0fb18ae45b70efe8522a3874, type: 3}
+  - brsImg: {fileID: 21300000, guid: 4defae96b0da744418171a56b0672278, type: 3}
+  - netImg: {fileID: 21300000, guid: c618dcb6ceecd8f4c986eb83fa5262e6, type: 3}
+  - gerImg: {fileID: 21300000, guid: 422b52fc6249e8d429de010242acee97, type: 3}
+  - crtImg: {fileID: 21300000, guid: 247fe508346bc7f42a8156ca3b57cf2e, type: 3}
+  - frcImg: {fileID: 21300000, guid: 2872880a05542ba4cb393f7d170f9bbf, type: 3}
+  - engImg: {fileID: 21300000, guid: 11ff4e45df325c04984f59633f12e789, type: 3}
+  - spnImg: {fileID: 21300000, guid: 336fd195d315d8440bda8f6f3ae8c5e2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

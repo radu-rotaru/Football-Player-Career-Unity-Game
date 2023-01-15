@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 public class MatchMessage : MonoBehaviour
 {
     public GameObject matchMessage;
+    public GameObject goalScoredAudio;
+    public GameObject missedChanceAudio;
     public static int goalsPlayerTeam = 0;
     public static int goalsOpponentTeam = 0;
     public static int playerScenes = 1;
@@ -194,12 +196,18 @@ public class MatchMessage : MonoBehaviour
 
                         if (isGoal == 1)
                         {
+                            AudioPlayer.playAudio(goalScoredAudio.GetComponent<AudioSource>(), 11.0f);
+                            /*   goalScoredAudio.GetComponent<AudioSource>().time = 11.0f;
+                               goalScoredAudio.GetComponent<AudioSource>().Play();*/
                             var chosenMessage = random.Next(0, goalMessages.Length);
                             matchMessage.GetComponent<TextMeshProUGUI>().text = $"Your team: \n {goalMessages[chosenMessage]}";
                             goalsPlayerTeam += 1;
                         }
                         else
                         {
+                            AudioPlayer.playAudio(missedChanceAudio.GetComponent<AudioSource>(), 5.0f);
+                            /*missedChanceAudio.GetComponent<AudioSource>().time = 5.0f;
+                            missedChanceAudio.GetComponent<AudioSource>().Play();*/
                             var chosenMessage = random.Next(0, missMessages.Length);
                             matchMessage.GetComponent<TextMeshProUGUI>().text = $"Your team: \n {missMessages[chosenMessage]}";
                         }
@@ -216,12 +224,18 @@ public class MatchMessage : MonoBehaviour
 
                     if (isGoal == 1)
                     {
+                        AudioPlayer.playAudio(goalScoredAudio.GetComponent<AudioSource>(), 11.0f);
+                        /*goalScoredAudio.GetComponent<AudioSource>().time = 11.0f;
+                        goalScoredAudio.GetComponent<AudioSource>().Play();*/
                         var chosenMessage = random.Next(0, goalMessages.Length);
                         matchMessage.GetComponent<TextMeshProUGUI>().text = $"Opponent Team: \n {goalMessages[chosenMessage]}";
                         goalsOpponentTeam += 1;
                     }
                     else
                     {
+                        AudioPlayer.playAudio(missedChanceAudio.GetComponent<AudioSource>(), 5.0f);
+                        /*missedChanceAudio.GetComponent<AudioSource>().time = 5.0f;
+                        missedChanceAudio.GetComponent<AudioSource>().Play();*/
                         var chosenMessage = random.Next(0, missMessages.Length);
                         matchMessage.GetComponent<TextMeshProUGUI>().text = $"Opponent Team: \n {missMessages[chosenMessage]}";
                     }

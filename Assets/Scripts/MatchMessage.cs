@@ -79,13 +79,22 @@ public class MatchMessage : MonoBehaviour
             // no more scenes, the match is over
             if (playerScenes + playerTeamScenes + computerScenes == 0)
             {
-                matchMessage.GetComponent<TextMeshProUGUI>().text = $"The referee blows the whistle! The result is {goalsPlayerTeam} - {goalsOpponentTeam}";
-                Click.done = false;
-                goalsPlayerTeam = 0;
-                goalsOpponentTeam = 0;
-                computerScenes = 5;
+                if (goalsPlayerTeam != goalsOpponentTeam)
+                {
+                    matchMessage.GetComponent<TextMeshProUGUI>().text = $"The referee blows the whistle! The result is {goalsPlayerTeam} - {goalsOpponentTeam}";
+                    Click.done = false;
+                    goalsPlayerTeam = 0;
+                    goalsOpponentTeam = 0;
+                    computerScenes = 5;
 
-                sceneToLoad = endScene;
+                    sceneToLoad = endScene;
+                }
+                else
+                {
+                    playerTeamScenes = 1;
+                    computerScenes = 1;
+                    started = false;
+                }
             }
             else
             {

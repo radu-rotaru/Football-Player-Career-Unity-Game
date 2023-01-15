@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ShootingFromActionRight.unity
     guid: 0f2bcc7b75809b64195d1fd3c8a77dc8
   - enabled: 1
-    path: Assets/Scenes/TrainingScene.unity
+    path: Assets/Scenes/QuarterFinals.unity
     guid: c85f88877a7c0d9429458df85941aec5
   - enabled: 1
     path: Assets/Scenes/OptionsScene.unity

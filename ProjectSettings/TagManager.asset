@@ -9,6 +9,14 @@ TagManager:
   - MIssWall
   - Misstext
   - MissWall
+  - Argentina
+  - Brazil
+  - Croatia
+  - England
+  - France
+  - Germany
+  - Netherlands
+  - Spain
   layers:
   - Default
   - TransparentFX

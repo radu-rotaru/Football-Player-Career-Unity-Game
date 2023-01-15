@@ -15,7 +15,10 @@ public class MatchMessage : MonoBehaviour
     public static int playerScenes = 1;
     public static int playerTeamScenes = 5 - playerScenes;
     public static int computerScenes = 5;
-
+    public static int matchCount = 0;
+    public int quarter = 0;
+    public int semiFinals = 0;
+    public int finals = 0;
     private bool started = false;
     private int isPlayerTeamSceneNext = 0;
     private float timeElapsed = 0f;
@@ -72,7 +75,7 @@ public class MatchMessage : MonoBehaviour
         }
 
         // check if the match action was chosen or not
-        if(!started)
+        if (!started)
         {
             started = true;
 
@@ -82,6 +85,43 @@ public class MatchMessage : MonoBehaviour
                 if (goalsPlayerTeam != goalsOpponentTeam)
                 {
                     matchMessage.GetComponent<TextMeshProUGUI>().text = $"The referee blows the whistle! The result is {goalsPlayerTeam} - {goalsOpponentTeam}";
+                    if (goalsPlayerTeam - goalsOpponentTeam > 0)
+                    {
+                        if (matchCount == 0)
+                        {
+                            quarter = 1;
+                            matchCount++;
+                        }
+                        else if (matchCount == 1)
+                        {
+                            matchCount++;
+                            semiFinals = 1;
+                        }
+                        else if (matchCount == 2)
+                        {
+                            matchCount++;
+                            finals = 1;
+                        }
+                        else if(matchCount == 3)
+                        {
+                            finals = 2;
+                            //WIN SCENE
+                        }
+                    }
+                    else if (goalsOpponentTeam - goalsPlayerTeam > 0)
+                    {
+                        goalsPlayerTeam = 0;
+                        goalsOpponentTeam = 0;
+                        playerScenes = 1;
+                        playerTeamScenes = 5 - playerScenes;
+                        computerScenes = 5;
+                        matchCount = 0;
+                        quarter = 0;
+                        semiFinals = 0;
+                        finals = 0;
+                    }
+                    
+                    
                     Click.done = false;
                     goalsPlayerTeam = 0;
                     goalsOpponentTeam = 0;

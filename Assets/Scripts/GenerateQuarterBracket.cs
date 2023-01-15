@@ -30,10 +30,10 @@ public class GenerateQuarterBracket : MonoBehaviour
         c7 = GameObject.FindWithTag(bracket[6]);
         c8 = GameObject.FindWithTag(bracket[7]);
 
-        c1.transform.position = new Vector3(235, -177, 0);
-        c2.transform.position = new Vector3(595, -177, 0);
-        c3.transform.position = new Vector3(955, -177, 0);
-        c4.transform.position = new Vector3(1315, -177, 0);
+        c1.transform.position = new Vector3(235, -590, 0);
+        c2.transform.position = new Vector3(595, -590, 0);
+        c3.transform.position = new Vector3(955, -590, 0);
+        c4.transform.position = new Vector3(1315, -590, 0);
         c5.transform.position = new Vector3(235, -457, 0);
         c6.transform.position = new Vector3(595, -457, 0);
         c7.transform.position = new Vector3(955, -457, 0);

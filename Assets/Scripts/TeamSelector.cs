@@ -7,7 +7,7 @@ using UnityEngine;
 public class TeamSelector : MonoBehaviour
 {
 
-    public int playerTeam;
+    public static int playerTeam = -1;
 
     private GameObject playMenu ;
 
@@ -21,8 +21,7 @@ public class TeamSelector : MonoBehaviour
 
     void Start()
     {
-        
-        if (playerTeam==-1)
+        if (playerTeam == -1)
         {
             playMenu.SetActive(false);
             teamSelector.SetActive(true);
@@ -33,13 +32,11 @@ public class TeamSelector : MonoBehaviour
             teamSelector.SetActive(false);
         }
     }
+
     public void changeTeam(int id)
     {
         playerTeam = id;
         playMenu.SetActive(true);
         teamSelector.SetActive(false);
     }
-
-   
-    
 }

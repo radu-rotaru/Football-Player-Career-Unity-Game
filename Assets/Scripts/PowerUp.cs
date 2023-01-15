@@ -44,11 +44,11 @@ public class PowerUp : MonoBehaviour
         Shooting.power = powerAmount;
         isPowerUp = false;
 
-        if(!done && Direction.chosen)
+/*        if(!done && Direction.chosen)
         {
             done = true;
             Shooting.isShooting = true;
-        }
+        }*/
     }
 
     public void PowerBarMovement()

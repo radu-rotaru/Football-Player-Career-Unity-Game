@@ -39,6 +39,7 @@ public class GoalMessage : MonoBehaviour
             Message.SetActive(true);
 
             scored = true;
+            Shooting.hasShot = false;
         }
     }
     void OnCollisionStay(Collision other)
@@ -49,6 +50,7 @@ public class GoalMessage : MonoBehaviour
             Message.SetActive(true);
 
             scored = true;
+            Shooting.hasShot = false;
         }
     }
     void OnCollisionExit(Collision other)
@@ -59,6 +61,7 @@ public class GoalMessage : MonoBehaviour
             Message.SetActive(true);
 
             scored = true;
+            Shooting.hasShot = false;
         }
     }
 }

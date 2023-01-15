@@ -7,19 +7,20 @@ using UnityEngine.SceneManagement;
 public class GoalMessage : MonoBehaviour
 {
     public GameObject Message;
-    private bool started = false;
+    public static bool scored = false;
     private float timeElapsed = 0f;
     private float delayBeforeLoading = 3.0f;
     private string sceneToLoad = "MatchMessage";
    
     void start()
     {
+        scored = false;
         Message.SetActive(false);
     }
 
     void Update()
     {
-        if (started)
+        if (scored)
         {
             timeElapsed += Time.deltaTime;
             if (timeElapsed > delayBeforeLoading)
@@ -37,7 +38,7 @@ public class GoalMessage : MonoBehaviour
             print("enter");
             Message.SetActive(true);
 
-            started = true;
+            scored = true;
         }
     }
     void OnCollisionStay(Collision other)
@@ -47,7 +48,7 @@ public class GoalMessage : MonoBehaviour
             print("stay");
             Message.SetActive(true);
 
-            started = true;
+            scored = true;
         }
     }
     void OnCollisionExit(Collision other)
@@ -57,7 +58,7 @@ public class GoalMessage : MonoBehaviour
             print("exit");
             Message.SetActive(true);
 
-            started = true;
+            scored = true;
         }
     }
 }

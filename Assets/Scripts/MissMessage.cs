@@ -8,11 +8,12 @@ public class MissMessage : MonoBehaviour
 {
 
     public GameObject Message;
-    private bool started = false;
-    private float timeElapsed = 0f;
-    private float delayBeforeLoading = 3.0f;
+    private bool missed = false;
+    private float timeElapsedScene = 0f;
+    private float timeElapsedMiss = 0f;
+    private float delayBeforeLoading = 3.2f;
+    private float delayBeforeMiss = 3.0f;
     private string sceneToLoad = "MatchMessage";
-
 
     void start()
     {
@@ -21,44 +22,21 @@ public class MissMessage : MonoBehaviour
 
     void Update()
     {
-        if(started)
-        {
-            timeElapsed += Time.deltaTime;
-            if(timeElapsed > delayBeforeLoading)
+        if (Shooting.hasShot && !missed && !GoalMessage.scored)
+        {  
+            timeElapsedMiss += Time.deltaTime;
+            if (timeElapsedMiss >= delayBeforeMiss)
+            {
+                Message.SetActive(true);
+                missed = true;
+            }
+        }
+        else if(missed) {
+            timeElapsedScene += Time.deltaTime;
+            if(timeElapsedScene >= delayBeforeLoading)
             {
                 SceneManager.LoadScene(sceneToLoad);
             }
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "MissWall")
-        {
-            print("enter");
-            Message.SetActive(false);
-
-            started = true;
-        }
-    }
-    void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.tag == "MissWall")
-        {
-            print("stay");
-            Message.SetActive(true);
-
-            started = true;
-        }
-    }
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.tag == "MissWall")
-        {
-            print("exit");
-            Message.SetActive(true);
-
-            started = true;
         }
     }
 }

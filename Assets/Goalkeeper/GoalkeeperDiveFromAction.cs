@@ -31,7 +31,6 @@ public class GoalkeeperDiveFromAction : MonoBehaviour
             }
 
             done = true;
-            /*Shooting.hasShot = false;*/
         }
     }
 

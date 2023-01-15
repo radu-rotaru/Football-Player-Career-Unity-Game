@@ -23,11 +23,11 @@ public class TeamSelector : MonoBehaviour
     public Sprite engImg;
     [SerializeField]
     public Sprite spnImg;
-   
+    private static int position;
     private GameObject myTeam;
     private GameObject opponentTeam;
 
-    public  int playerTeam = -1;
+    public static int playerTeam = -1;
 
     private GameObject playMenu ;
 
@@ -71,11 +71,15 @@ public class TeamSelector : MonoBehaviour
     }
     void displayTeams()
     {
-        
-        int position = UnityEngine.Random.Range(1, 8);
-        while (position == playerTeam)
+
+        if (!Click.done)
+        {
             position = UnityEngine.Random.Range(1, 8);
-        Debug.Log(playerTeam);
+
+            while (position == playerTeam)
+                position = UnityEngine.Random.Range(1, 8);
+        }
+        
         if (playerTeam == 1)
             myTeam.GetComponent<Image>().sprite = argImg;
         else if (playerTeam == 2)
@@ -116,8 +120,8 @@ public class TeamSelector : MonoBehaviour
 
     }
     public void Update()
-    {
-           if(playerTeam != -1 && ok == 1)
+    {  
+          if(playerTeam != -1 && ok == 1)
         {
             displayTeams();
             ok = 0;

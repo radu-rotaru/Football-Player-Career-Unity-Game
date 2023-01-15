@@ -6,10 +6,11 @@ using System;
 public class GoalkeeperDivePenalty : MonoBehaviour
 {
     public GameObject goalkeeper;
+    private bool done = false;
 
     void Update()
     {
-        if (Shooting.hasShot)
+        if (!done && Shooting.hasShot)
         {
             var rnd = new System.Random(DateTime.Now.Millisecond);
             bool dive_dir = rnd.Next(2) == 1;
@@ -23,8 +24,7 @@ public class GoalkeeperDivePenalty : MonoBehaviour
                 goalkeeper.GetComponent<Animator>().Play("GoalkeeperDiveRight");
             }
 
-            Shooting.hasShot = false;
-            
+            done = true;
         }
     }
 }

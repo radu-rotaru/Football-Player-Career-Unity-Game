@@ -9,5 +9,8 @@ public class ResetValues : MonoBehaviour
         MatchMessage.matchCount = 0;
         TeamSelector.position = -1;
         TeamSelector.playerTeam = -1;
+        TeamSelector.quarterPosition = -1;
+        TeamSelector.semiFinalPosition = -1;
+
     }
 }

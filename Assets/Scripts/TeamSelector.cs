@@ -28,11 +28,13 @@ public class TeamSelector : MonoBehaviour
     private GameObject opponentTeam;
     public static int playerTeam = -1;
     private GameObject playMenu;
+    private string ourTeamString;
 
     private GameObject teamSelector ;
     GameObject gameObject;
     private static List<string> myCountryList = new List<string>() { "Argentina", "Brazil", "Croatia", "England", "France", "Germany", "Netherlands", "Spain"};
- 
+    public static int quarterPosition =-1;
+    public static int semiFinalPosition =-1; 
     // Start is called before the first frame update
     private void Awake()
     {
@@ -70,7 +72,7 @@ public class TeamSelector : MonoBehaviour
         {
             position = UnityEngine.Random.Range(1, 8);
 
-            while (position == playerTeam)
+            while (position == playerTeam || position == quarterPosition || position == semiFinalPosition)
                 position = UnityEngine.Random.Range(1, 8);
         }
         
@@ -123,12 +125,15 @@ public class TeamSelector : MonoBehaviour
 
         if (MatchMessage.matchCount == 1 && ok1 == 0)
         {
+            quarterPosition = position;
             displayTeams();
             ok1 = 1;
+
 
         }
         else if(MatchMessage.matchCount == 2 && ok2 == 0)
         {
+            semiFinalPosition = position;
             displayTeams();
             ok2 = 1;
         }

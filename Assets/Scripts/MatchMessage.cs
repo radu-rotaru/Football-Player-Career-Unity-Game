@@ -18,9 +18,6 @@ public class MatchMessage : MonoBehaviour
     public static int playerTeamScenes = 5 - playerScenes;
     public static int computerScenes = 5;
     public static int matchCount = 0;
-    public int quarter = 0;
-    public int semiFinals = 0;
-    public int finals = 0;
     private bool started = false;
     private int isPlayerTeamSceneNext = 0;
     private float timeElapsed = 0f;
@@ -29,6 +26,8 @@ public class MatchMessage : MonoBehaviour
     private string sceneToLoad;
 
     private string endScene = "PlayScene";
+    private string winScene = "WinScene";
+    private string loseScene = "LoseScene";
 
     private string[] goalMessages = {
     "The team has just put the ball in the back of the net with a well-placed shot, a great finish that showcases their attacking prowess. The player cut through the defense and placed it perfectly in the corner.",
@@ -89,38 +88,19 @@ public class MatchMessage : MonoBehaviour
                     matchMessage.GetComponent<TextMeshProUGUI>().text = $"The referee blows the whistle! The result is {goalsPlayerTeam} - {goalsOpponentTeam}";
                     if (goalsPlayerTeam - goalsOpponentTeam > 0)
                     {
-                        if (matchCount == 0)
+                        matchCount++;
+                        TeamSelector.position = -1;
+
+                        sceneToLoad = endScene;
+
+                        if (matchCount == 3)
                         {
-                            quarter = 1;
-                            matchCount++;
-                        }
-                        else if (matchCount == 1)
-                        {
-                            matchCount++;
-                            semiFinals = 1;
-                        }
-                        else if (matchCount == 2)
-                        {
-                            matchCount++;
-                            finals = 1;
-                        }
-                        else if(matchCount == 3)
-                        {
-                            finals = 2;
-                            //WIN SCENE
+                            sceneToLoad = winScene;
                         }
                     }
                     else if (goalsOpponentTeam - goalsPlayerTeam > 0)
                     {
-                        goalsPlayerTeam = 0;
-                        goalsOpponentTeam = 0;
-                        playerScenes = 1;
-                        playerTeamScenes = 5 - playerScenes;
-                        computerScenes = 5;
-                        matchCount = 0;
-                        quarter = 0;
-                        semiFinals = 0;
-                        finals = 0;
+                        sceneToLoad = loseScene;
                     }
                     
                     
@@ -128,8 +108,8 @@ public class MatchMessage : MonoBehaviour
                     goalsPlayerTeam = 0;
                     goalsOpponentTeam = 0;
                     computerScenes = 5;
-
-                    sceneToLoad = endScene;
+                    playerScenes = 1;
+                    playerTeamScenes = 5 - playerScenes;
                 }
                 else
                 {
@@ -197,8 +177,6 @@ public class MatchMessage : MonoBehaviour
                         if (isGoal == 1)
                         {
                             AudioPlayer.playAudio(goalScoredAudio.GetComponent<AudioSource>(), 11.0f);
-                            /*   goalScoredAudio.GetComponent<AudioSource>().time = 11.0f;
-                               goalScoredAudio.GetComponent<AudioSource>().Play();*/
                             var chosenMessage = random.Next(0, goalMessages.Length);
                             matchMessage.GetComponent<TextMeshProUGUI>().text = $"Your team: \n {goalMessages[chosenMessage]}";
                             goalsPlayerTeam += 1;
@@ -206,8 +184,6 @@ public class MatchMessage : MonoBehaviour
                         else
                         {
                             AudioPlayer.playAudio(missedChanceAudio.GetComponent<AudioSource>(), 5.0f);
-                            /*missedChanceAudio.GetComponent<AudioSource>().time = 5.0f;
-                            missedChanceAudio.GetComponent<AudioSource>().Play();*/
                             var chosenMessage = random.Next(0, missMessages.Length);
                             matchMessage.GetComponent<TextMeshProUGUI>().text = $"Your team: \n {missMessages[chosenMessage]}";
                         }
@@ -225,8 +201,6 @@ public class MatchMessage : MonoBehaviour
                     if (isGoal == 1)
                     {
                         AudioPlayer.playAudio(goalScoredAudio.GetComponent<AudioSource>(), 11.0f);
-                        /*goalScoredAudio.GetComponent<AudioSource>().time = 11.0f;
-                        goalScoredAudio.GetComponent<AudioSource>().Play();*/
                         var chosenMessage = random.Next(0, goalMessages.Length);
                         matchMessage.GetComponent<TextMeshProUGUI>().text = $"Opponent Team: \n {goalMessages[chosenMessage]}";
                         goalsOpponentTeam += 1;
@@ -234,8 +208,6 @@ public class MatchMessage : MonoBehaviour
                     else
                     {
                         AudioPlayer.playAudio(missedChanceAudio.GetComponent<AudioSource>(), 5.0f);
-                        /*missedChanceAudio.GetComponent<AudioSource>().time = 5.0f;
-                        missedChanceAudio.GetComponent<AudioSource>().Play();*/
                         var chosenMessage = random.Next(0, missMessages.Length);
                         matchMessage.GetComponent<TextMeshProUGUI>().text = $"Opponent Team: \n {missMessages[chosenMessage]}";
                     }

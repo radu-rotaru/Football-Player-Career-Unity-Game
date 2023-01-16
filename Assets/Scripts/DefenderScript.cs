@@ -13,7 +13,6 @@ public class DefenderScript : MonoBehaviour
         {
             defender.GetComponent<Animator>().Play("Tackle");
             done = true;
-            /*Shooting.hasShot = false;*/
         }
     }
 }

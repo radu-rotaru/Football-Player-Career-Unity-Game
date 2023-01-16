@@ -12,7 +12,7 @@ public class GoalMessage : MonoBehaviour
     private float delayBeforeLoading = 3.0f;
     private string sceneToLoad = "MatchMessage";
    
-    void start()
+    void Start()
     {
         scored = false;
         Message.SetActive(false);
@@ -25,6 +25,9 @@ public class GoalMessage : MonoBehaviour
             timeElapsed += Time.deltaTime;
             if (timeElapsed > delayBeforeLoading)
             {
+                Shooting.hasShot = false;
+                Direction.chosen = false;
+                PowerUp.chosen = false;
                 MatchMessage.goalsPlayerTeam += 1;
                 SceneManager.LoadScene(sceneToLoad);
             }

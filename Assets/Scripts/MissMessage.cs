@@ -36,6 +36,8 @@ public class MissMessage : MonoBehaviour
             if(timeElapsedScene >= delayBeforeLoading)
             {
                 Shooting.hasShot = false;
+                Direction.chosen = false;
+                PowerUp.chosen = false;
                 SceneManager.LoadScene(sceneToLoad);
             }
         }

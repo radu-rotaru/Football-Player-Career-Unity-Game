@@ -43,14 +43,6 @@ public class Direction : MonoBehaviour
         {
             DirectionBarMovement();
         }
-        /*else
-        {
-            if(!done && PowerUp.chosen)
-            {
-                done = true;
-                Shooting.isShooting = true;
-            }
-        }*/
     }
 
     public void EndDirectionBar()

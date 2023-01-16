@@ -7,7 +7,6 @@ public class Shooting : MonoBehaviour
 
     public static Vector3 direction;
     public static float power;
-    /*public static bool isShooting = false;*/
     public static bool hasShot = false;
 
     void Update()
@@ -15,7 +14,6 @@ public class Shooting : MonoBehaviour
         if (Direction.chosen && PowerUp.chosen && !hasShot)
         {
             hasShot = true;
-            /*isShooting = false;*/
             shoot();
         }
     }

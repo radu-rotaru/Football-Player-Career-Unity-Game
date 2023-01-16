@@ -23,17 +23,15 @@ public class TeamSelector : MonoBehaviour
     public Sprite engImg;
     [SerializeField]
     public Sprite spnImg;
-    private static int position;
+    public static int position = -1;
     private GameObject myTeam;
     private GameObject opponentTeam;
-
     public static int playerTeam = -1;
-
-    private GameObject playMenu ;
+    private GameObject playMenu;
 
     private GameObject teamSelector ;
     GameObject gameObject;
-    List<string> myCountryList = new List<string>() { "Argentina", "Brazil", "Croatia", "England", "France", "Germany", "Netherlands", "Spain"};
+    private static List<string> myCountryList = new List<string>() { "Argentina", "Brazil", "Croatia", "England", "France", "Germany", "Netherlands", "Spain"};
  
     // Start is called before the first frame update
     private void Awake()
@@ -47,7 +45,6 @@ public class TeamSelector : MonoBehaviour
     int ok = 1, ok1 = 0, ok2 = 0 , ok3 = 0;
     void Start()
     {
-       
         if (playerTeam == -1)
         {
             playMenu.SetActive(false);
@@ -55,12 +52,9 @@ public class TeamSelector : MonoBehaviour
         }
         else
         {
-
             playMenu.SetActive(true);
             teamSelector.SetActive(false);
         }
-        
-        
     }
 
     public void changeTeam(int id)
@@ -72,7 +66,7 @@ public class TeamSelector : MonoBehaviour
     void displayTeams()
     {
 
-        if (!Click.done)
+        if (position == -1)
         {
             position = UnityEngine.Random.Range(1, 8);
 

@@ -8,6 +8,7 @@ public class MissMessage : MonoBehaviour
 {
 
     public GameObject Message;
+    public GameObject missedChanceAudio;
     private bool missed = false;
     private float timeElapsedScene = 0f;
     private float timeElapsedMiss = 0f;
@@ -28,6 +29,7 @@ public class MissMessage : MonoBehaviour
             if (timeElapsedMiss >= delayBeforeMiss)
             {
                 Message.SetActive(true);
+                AudioPlayer.playAudio(missedChanceAudio.GetComponent<AudioSource>(), 7.0f);
                 missed = true;
             }
         }

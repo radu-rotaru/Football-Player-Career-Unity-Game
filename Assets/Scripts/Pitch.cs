@@ -9,9 +9,9 @@ public class Pitch : MonoBehaviour
     private GameObject menu;
     public GameObject trainingMessage;
     // the score that gives the max reward, every score higher gives the same result
-    private float maxScore = 60.0f;
+    private float maxScore = 20.0f;
     public static bool finished = false;
-    private int levelStep = 30;
+    private int levelStep = 10;
 
     void Start()
     {
@@ -24,7 +24,11 @@ public class Pitch : MonoBehaviour
         if(menu.GetComponent<Menu>().score > 0)
         {
             MatchMessage.playerScenes = 1 + Convert.ToInt32(Math.Floor(Math.Min(maxScore, menu.GetComponent<Menu>().score) / levelStep));
-            MatchMessage.playerTeamScenes = 5 - MatchMessage.playerScenes;
+            if(!MatchOptions.godModeOn)
+            {
+                MatchMessage.playerTeamScenes = 5 - MatchMessage.playerScenes;
+            }
+        
             trainingMessage.GetComponent<TextMeshProUGUI>().text = $"Final score: {menu.GetComponent<Menu>().score}";
             finished = true;
         }

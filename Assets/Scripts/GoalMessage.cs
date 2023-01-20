@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GoalMessage : MonoBehaviour
 {
     public GameObject Message;
+    public GameObject goalScoredAudio;
     public static bool scored = false;
     private float timeElapsed = 0f;
     private float delayBeforeLoading = 3.0f;
@@ -42,6 +43,7 @@ public class GoalMessage : MonoBehaviour
             Message.SetActive(true);
 
             scored = true;
+            AudioPlayer.playAudio(goalScoredAudio.GetComponent<AudioSource>(), 13.0f);
         }
     }
     void OnCollisionStay(Collision other)

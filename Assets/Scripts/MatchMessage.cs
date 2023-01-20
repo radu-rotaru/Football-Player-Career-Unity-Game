@@ -14,9 +14,9 @@ public class MatchMessage : MonoBehaviour
     public GameObject missedChanceAudio;
     public static int goalsPlayerTeam = 0;
     public static int goalsOpponentTeam = 0;
-    public static int playerScenes = 1;
-    public static int playerTeamScenes = 5 - playerScenes;
-    public static int computerScenes = 5;
+    public static int playerScenes = MatchOptions.playerScenes;
+    public static int playerTeamScenes = MatchOptions.playerTeamScenes - playerScenes;
+    public static int computerScenes = MatchOptions.opScenes;
     public static int matchCount = 0;
     private bool started = false;
     private int isPlayerTeamSceneNext = 0;
@@ -107,9 +107,9 @@ public class MatchMessage : MonoBehaviour
                     Click.done = false;
                     goalsPlayerTeam = 0;
                     goalsOpponentTeam = 0;
-                    computerScenes = 5;
-                    playerScenes = 1;
-                    playerTeamScenes = 5 - playerScenes;
+                    computerScenes = MatchOptions.opScenes;
+                    playerScenes = MatchOptions.playerScenes;
+                    playerTeamScenes = MatchOptions.playerTeamScenes - playerScenes;
                 }
                 else
                 {
